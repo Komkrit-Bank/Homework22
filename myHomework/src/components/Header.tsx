@@ -6,12 +6,14 @@ const Header = () => {
   return (
     <>
     <Box
-        display="flex"
-        flexDirection='column'
-        alignItems='center'
-        maxWidth='sm'>
+        sx={{
+        display:"flex",
+        flexDirection:'column',
+        alignItems:'center',
+        maxWidth:'sm'
+        }}>
         <h1>Album Layout</h1>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione magnam iste, necessitatibus, harum eligendi distinctio cum, quasi inventore eos maxime molestias. Quod corrupti harum cumque officia hic dolore ipsa exercitationem.</p>
+        <p style={{marginBottom: '30px'}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione magnam iste, necessitatibus, harum eligendi distinctio cum, quasi inventore eos maxime molestias. Quod corrupti harum cumque officia hic dolore ipsa exercitationem.</p>
         <Stack spacing={2} direction="row">
             <Button variant="contained">MAIN CALL TO ACTION</Button>
             <Button variant="outlined">SECONDY ACTION</Button>
