@@ -32,8 +32,8 @@ const itemCard = () => {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small">Share</Button>
-              <Button size="small">Learn More</Button>
+              <Button size="small" variant='contained' color='success'>MEET FRIEND</Button>
+              <Button size="small" color='success'>Detail</Button>
             </CardActions>
           </Card>
         )
