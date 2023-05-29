@@ -8,8 +8,8 @@ const Header = () => {
     <Box
         sx={{
         display:"flex",
-        flexDirection:'column',
-        alignItems:'center',
+        flexDirection: 'column',
+        alignItems: 'center',
         maxWidth:'sm'
         }}>
         <h1>Album Layout</h1>
