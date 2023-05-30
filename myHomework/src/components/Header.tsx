@@ -12,11 +12,11 @@ const Header = () => {
         alignItems: 'center',
         maxWidth:'sm'
         }}>
-        <h1 style={{color: 'green'}}>Lizard World</h1>
+        <h1>Product Album</h1>
         <p style={{marginBottom: '30px'}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione magnam iste, necessitatibus, harum eligendi distinctio cum, quasi inventore eos maxime molestias. Quod corrupti harum cumque officia hic dolore ipsa exercitationem.</p>
         <Stack spacing={2} direction="row">
-            <Button variant="contained" color="success">ADOPT FRIEND</Button>
-            <Button variant="outlined" color="success">FRIEND LIST</Button>
+            <Button variant="contained" color="primary">CHECKOUT</Button>
+            <Button variant="outlined" color="primary">CART LIST</Button>
         </Stack>
     </Box>
     </>

@@ -1,0 +1,7 @@
+.body__paper, .title__paper {
+    margin: 0 0 -5% 5%
+}
+
+.body__paper {
+    text-indent: 10%;
+}
