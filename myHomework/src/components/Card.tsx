@@ -24,7 +24,7 @@ const itemCard = () => {
           <Card key={items[i]['id']} sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
-              alt="green iguana"
+              alt=""
               height="140"
               image= {`/src/images/${items[i]['img']}`}
             />

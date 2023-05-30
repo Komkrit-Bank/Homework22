@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import '../stylesheets/ItemImage.css'
 import { Image } from 'mui-image'
-import {styled, ThemeProvider, createTheme, Button} from '@mui/material';
+import {styled, ThemeProvider, createTheme, Button, Container} from '@mui/material';
 
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -42,6 +42,7 @@ const lightTheme = createTheme({ palette: { mode: 'light' } });
 const ItemImage = () => {
   return (
     <>
+    <Container>
     <Grid container spacing={2} mt={3} >
         <Grid xs={6}>
             <Box sx={{
@@ -168,6 +169,7 @@ const ItemImage = () => {
             </Box>
         </Grid>
     </Grid>
+    </Container>
     </>
   )
 }
