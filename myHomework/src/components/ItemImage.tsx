@@ -39,136 +39,133 @@ const Div = styled('div')(({ theme }) => ({
 
 const lightTheme = createTheme({ palette: { mode: 'light' } });
 
+let pro_datail:string[] = ['Intel Core i5-11320H', 
+                            '8GB SO-DIMM DDR4 3200',
+                            '512GB SSD M.2 2242 PCIe 3.0x4 NVMe',
+                            'Windows 11 Home 64',
+                            'Built-in HD Webcam (720p HD Camera HD Camera) with privacy shutter',
+                            '1x power connector,1x Ethernet (RJ-45) , 1x USB-C 3.2 Gen 1 (support data transfer only) , 1x headphone / microphone combo jack (3.5mm) , 1x HDMI 2.0 , 2x USB 3.2 Gen 1'
+                        ]
+
+const itemDetail = (detail: string[]) => {
+    const object:any = []
+    const loopDetail = () => {
+        for (let i = 0; i < detail.length; i++){
+            object.push(
+                <>
+                <ListItem disablePadding>
+                    <Typography variant={'body2'} >
+                        {detail[i]}
+                    </Typography>
+                </ListItem>
+                <Divider />
+                </>
+            )
+        }
+        return object
+    }
+
+    return (
+        <Box sx={{ width: '100%', maxWidth: '100%', bgcolor: 'background.paper' }}>
+            <List>
+                <ListItem disablePadding>
+                    <Typography variant={'h6'}>
+                        <b>Specification</b>
+                    </Typography>
+                </ListItem>
+                <Divider />
+                {loopDetail()}
+            </List>
+        </Box>
+    )
+}
+
+
 const ItemImage = () => {
   return (
     <>
-    <Container>
-    <Grid container spacing={2} mt={3} >
-        <Grid xs={6}>
-            <Box sx={{
+    <Container maxWidth={'lg'}>
+        <Grid container spacing={2} mt={3} >
+            <Grid xs={6}>
+                <Box sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                }}>
+                <Image src='./src/images/Acer.jpg' 
+                    width={'80%'} height={'auto'}/>
+                </Box>
+            </Grid>
+            <Grid xs={6}>
+                    {[lightTheme].map((theme, index) => (
+                    <Grid xs={12} key={index}>
+                        <ThemeProvider theme={theme}>
+                        <Box
+                            sx={{
+                            p: 2,
+                            bgcolor: 'background.default',
+                            display: 'grid',
+                            }} component="form" autoComplete="off"
+                        >
+                            <Item elevation={24}>
+                            <Typography  
+                                color="text.secondary"
+                                variant="h5" sx={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    height: '30%',
+                                    ml: '5%',
+                                    fontWeight: 'bold'
+                                }}>
+                                {`Acer Notebook`}
+                            </Typography>
+                                <Divider/>
+                                <Div>
+                                    <p className='title__paper' ><b>Price: </b> 399$</p>
+                                </Div>
+                                <Div>
+                                    <p className='body__paper'>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
+                                    </p>
+                                </Div>
+                                <Div>
+                                    <TextField id="qty" label="Quantity" variant="outlined" 
+                                                sx={{
+                                                    marginLeft: '5%',
+                                                    width: '90%'
+                                                    }} /><br/>
+                                </Div>
+                                <Div>
+                                    <Button size='small' variant='contained' sx={{
+                                                marginLeft: '5%'
+                                            }}>add to cart</Button>
+                                </Div>
+                            </Item>
+                        </Box>
+                        </ThemeProvider>
+                    </Grid>
+                    ))}
+            </Grid>
+            <Grid xs={5} sx={{
                 display: 'flex',
-                justifyContent: 'center',
+                flexDirection: 'column',
+                ml: '5%',
+                my: '-5px'
             }}>
-            <Image src='./src/images/Acer.jpg' 
-                width={'80%'} height={'auto'}/>
-            </Box>
+                <h5><b>Stock:</b> 75/100</h5>
+                <BorderLinearProgress variant="determinate" value={50}
+                    sx={{
+                        width: '80%'
+                    }}/>
+                
+            </Grid>
+            <Grid xs={6} sx={{
+                marginLeft: '2%',
+                display: 'flex',
+                justifyContent: 'center'
+            }}>
+                {itemDetail(pro_datail)}
+            </Grid>
         </Grid>
-        <Grid xs={6}>
-                {[lightTheme].map((theme, index) => (
-                <Grid xs={12} key={index}>
-                    <ThemeProvider theme={theme}>
-                    <Box
-                        sx={{
-                        p: 2,
-                        bgcolor: 'background.default',
-                        display: 'grid',
-                        }} component="form" autoComplete="off"
-                    >
-                        <Item elevation={24}>
-                        <Typography  
-                            color="text.secondary"
-                            variant="h5" sx={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                height: '30%',
-                                ml: '5%',
-                                fontWeight: 'bold'
-                            }}>
-                            {`Acer Notebook`}
-                        </Typography>
-                            <Divider/>
-                            <Div>
-                                <p className='title__paper' ><b>Price: </b> 399$</p>
-                            </Div>
-                            <Div>
-                                <p className='body__paper'>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-                                </p>
-                            </Div>
-                            <Div>
-                                <TextField id="qty" label="Quantity" variant="outlined" 
-                                            sx={{
-                                                marginLeft: '5%',
-                                                width: '90%'
-                                                }} /><br/>
-                            </Div>
-                            <Div>
-                                <Button size='small' variant='contained' sx={{
-                                            marginLeft: '5%'
-                                        }}>add to cart</Button>
-                            </Div>
-                        </Item>
-                    </Box>
-                    </ThemeProvider>
-                </Grid>
-                ))}
-        </Grid>
-        <Grid xs={5} sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            ml: '5%',
-            my: '-5px'
-        }}>
-            <h5><b>Stock:</b> 75/100</h5>
-            <BorderLinearProgress variant="determinate" value={50}
-                sx={{
-                    width: '80%'
-                }}/>
-            
-        </Grid>
-        <Grid xs={6} sx={{
-            marginLeft: '2%',
-            display: 'flex',
-            justifyContent: 'center'
-        }}>
-            <Box sx={{ width: '100%', maxWidth: '100%', bgcolor: 'background.paper' }}>
-                <List>
-                    <ListItem disablePadding>
-                        <Typography variant={'h6'}>
-                            <b>Specification</b>
-                        </Typography>
-                    </ListItem>
-                    <Divider />
-                    <ListItem disablePadding>
-                        <Typography variant={'body2'} >
-                            Intel Core i5-11320H
-                        </Typography>
-                    </ListItem>
-                    <Divider />
-                    <ListItem disablePadding>
-                        <Typography variant={'body2'} >
-                            8GB SO-DIMM DDR4 3200
-                        </Typography>
-                    </ListItem>
-                    <Divider />
-                    <ListItem disablePadding>
-                        <Typography variant={'body2'} >
-                            512GB SSD M.2 2242 PCIe 3.0x4 NVMe
-                        </Typography>
-                    </ListItem>
-                    <Divider />
-                    <ListItem disablePadding>
-                        <Typography variant={'body2'} >
-                             Windows 11 Home 64
-                        </Typography>
-                    </ListItem>
-                    <Divider />
-                    <ListItem disablePadding>
-                        <Typography variant={'body2'} >
-                            Built-in HD Webcam (720p HD Camera HD Camera) with privacy shutter
-                        </Typography>
-                    </ListItem>
-                    <Divider />
-                    <ListItem disablePadding>
-                        <Typography variant={'body2'} >
-                        1x power connector,1x Ethernet (RJ-45) , 1x USB-C 3.2 Gen 1 (support data transfer only) , 1x headphone / microphone combo jack (3.5mm) , 1x HDMI 2.0 , 2x USB 3.2 Gen 1
-                        </Typography>
-                    </ListItem>
-                    <Divider />    
-                </List>
-            </Box>
-        </Grid>
-    </Grid>
     </Container>
     </>
   )

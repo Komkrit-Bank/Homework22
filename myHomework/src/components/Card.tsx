@@ -4,6 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Stack } from '@mui/material';
 
 const itemCard = () => {
 
@@ -39,8 +40,10 @@ const itemCard = () => {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small" variant='contained' color='info'>Add to Cart</Button>
-              <Button size="small" color='info' href='/item'>Detail</Button>
+              <Stack spacing={2} direction={'row'}>
+                <Button size="small" variant='contained' color='info'>Add to Cart</Button>
+                <Button size="small" color='info' href='/item'>Detail</Button>
+              </Stack>
             </CardActions>
           </Card>
         )
@@ -48,7 +51,9 @@ const itemCard = () => {
     return objects
 }
 
-  return (loopTest(testNum, item_list))
+  return (
+    loopTest(testNum, item_list)
+  )
 }
 
 export default itemCard
