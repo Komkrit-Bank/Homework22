@@ -24,7 +24,7 @@ const Payment = () => {
             </Box>
         </Container>
         <Container maxWidth='lg'>
-            <Typography variant="h4" component="h4">
+            <Typography variant="h4" component="h4" marginBottom={'10px'}>
                 Billing Information
             </Typography>
             <Billing/>
