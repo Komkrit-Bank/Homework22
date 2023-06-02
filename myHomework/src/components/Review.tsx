@@ -1,5 +1,5 @@
 import { Container, Box, Paper, Rating, Typography } from "@mui/material";
-import { useState } from 'react'
+// import { useState } from 'react'
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import ReviewCard from "./ReviewCard";
@@ -16,7 +16,7 @@ const lightTheme = createTheme({palette: {mode: 'light'}})
 // const darkTheme = createTheme({palette: {mode: 'dark'}})
 
 const Review = () => {
-    const [value, setValue] = useState<number | null>(2);
+    // const [value, setValue] = useState<number | null>(2);
 
     return (
         <Container>
@@ -38,10 +38,11 @@ const Review = () => {
                         name="half-rating"
                         defaultValue={2.5}
                         precision={0.5}
-                        value={value}
-                        onChange={(event, newValue) => {
-                        setValue(newValue);
-                        }}
+                        value={2.5}
+                        size="large"
+                        // onChange={(event, newValue) => {
+                        // setValue(newValue);
+                        // }}
                     />
                 </Item>
                 <Grid container sx={{
@@ -50,12 +51,9 @@ const Review = () => {
                     rowGap: '15px'
                 }}>
                     <ReviewCard/>
-                    <ReviewCard/>
                 </Grid>
-                
             </Box>
             </ThemeProvider>
-
         </Container>
     )
 }
