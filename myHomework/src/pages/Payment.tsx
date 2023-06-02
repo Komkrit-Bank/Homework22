@@ -1,6 +1,7 @@
 import Billing from "../components/Billing"
 import Navbar from "../components/Navbar"
 import { Container, Typography, Box } from '@mui/material'
+import PayMethod from "../components/PayMethod"
 
 const Payment = () => {
   return (
@@ -27,6 +28,9 @@ const Payment = () => {
                 Billing Information
             </Typography>
             <Billing/>
+        </Container>
+        <Container maxWidth='lg'>
+            <PayMethod/>
         </Container>
     </>
   )

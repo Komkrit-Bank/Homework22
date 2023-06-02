@@ -1,4 +1,6 @@
 import { Grid, TextField, Typography, MenuItem, Paper, List, ListItem, ListItemText, Divider, Box, Button } from "@mui/material"
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
 import { ThemeProvider, createTheme, styled } from "@mui/material"
 
 const country = [
@@ -34,6 +36,7 @@ const lightTheme = createTheme({palette: {mode: 'light'}});
 
 const Billing = () => {
   return (
+    <>
     <Grid container sx={{
         display: 'flex',
         flexDirection: 'row',
@@ -215,6 +218,19 @@ const Billing = () => {
             </ThemeProvider>
         </Grid>
     </Grid>
+    <Grid container marginTop={'3%'} component={'form'}>
+        <Grid xs={7}>
+            <Divider/>
+                <FormControlLabel control={<Checkbox defaultChecked/> } 
+                sx={{marginBottom: '5px', marginTop: '5px'}}
+                    label="Shipping address is the same as my billing address" />
+                <FormControlLabel control={<Checkbox/>}
+                sx={{marginBottom: '5px', marginTop: '5px'}} 
+                    label="Save this information for next time" />
+            <Divider/>
+        </Grid>
+    </Grid>
+    </>
   )
 }
 
